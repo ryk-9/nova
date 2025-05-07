@@ -1,0 +1,91 @@
+:root {
+    --font-primary: "GT Alpina Trial", Georgia, serif;
+    --font-secondary: "Alte Haas Grotesk", sans-serif;
+    --color-bg: #f3f3f3;
+    --color-text: #000000;
+    --color-hero: #446485;
+}
+
+/* Navbar */
+.navbar {
+    /* Fixed position and dimensions */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background-color: var(--color-bg);
+    z-index: 1000;
+    
+    /* Box model */
+    padding: 0;
+    margin: 0;
+    
+    /* Content alignment */
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    /* Position logo */
+    margin-left: 15px;
+}
+
+.nav-logo img {
+    /* Logo size */
+    height: 50px;
+    width: auto;
+    
+    /* Ensure proper rendering */
+    display: block;
+}
+
+/* Hero section styles */
+hero {
+    /* Positioning relative to navbar */
+    position: relative;
+    top: 70px; /* Equal to navbar height */
+    min-height: 100vh; /* Fill full screen */
+    width: 100%;
+    
+    /* Background */
+    background-color: var(--color-hero);
+    
+    /* Content layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Changed to space-between */
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.hero-content {
+    /* Text container */
+    text-align: center;
+    color: var(--color-text);
+    z-index: 5;
+    margin-bottom: 250px; /* Changed from margin-bottom */
+}
+
+.hero-text-1 {
+    /* First line */
+    font: var(--font-primary);
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+}
+
+.hero-text-2 {
+    /* Second line */
+    font-size: 2rem;
+    margin: 0;
+}
+
+.hero-image {
+    /* Responsive image */
+    max-width: 80%;
+    width: auto;
+    height: auto;
+    max-height: 50vh;
+    object-fit: contain;
+    margin-bottom: 0; /* Image sticks to bottom */
+}
