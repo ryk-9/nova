@@ -1,444 +1,339 @@
 /* Base styles */
-* {
+:root {
+    --font-primary: "GT Alpina Trial", Georgia, serif;
+    --font-secondary: "Alte Haas Grotesk", sans-serif;
+    --color-bg: #f3f3f3;
+    --color-text: #000000;
+    --color-hero: #496588;
+    --color-border: #ddd;
+    --container-max: 1200px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+  }
+  
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    font-family: "GT Alpina Trial", "Alte Haas Grostek", Georgia, serif;
+  }
+  
+  body {
+    font-family: var(--font-primary);
     line-height: 1.6;
-    background: #f3f3f3;
-    color: #000000;
+    background: var(--color-bg);
+    color: var(--color-text);
     overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 1200px;
+  }
+  
+  .container {
+    max-width: var(--container-max);
     margin: 0 auto;
-    padding: 32px;
-    background: #f3f3f3;
-}
-
-html {
+    padding: var(--spacing-lg);
+    background: var(--color-bg);
+  }
+  
+  html {
     scroll-behavior: smooth;
-}  
-
-/* Navbar */
-.navbar {
+  }
+  
+  /* Navbar */
+  nav {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50px;
-    position: fixed;
+    position: sticky;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
-    background-color: #f3f3f3;
-}
-
-.logo {
+    background-color: var(--color-bg);
+  }
+  
+  .logo {
     height: 30px;
-    display: flex;           /* Align child (img) inside */
+    display: flex;
     align-items: center;
-    position: fixed;
-}
-
-.logo img {
+    position: absolute;
+  }
+  
+  .logo img {
     height: 80%;
     width: auto;
-    display: fixed;
-}
-
-/* Hero */
-.hero {
-    min-height: calc(100vh); /* Reduced from 50px to increase bottom space */
+  }
+  
+  /* Hero */
+  .hero {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #496588;
+    background: var(--color-hero);
     position: relative;
-    margin-bottom: 20px; /* Additional space at bottom */
-}
-
-.hero-content {
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .hero-content {
     text-align: center;
     z-index: 10;
-    transform: translateY(-50px); /* Shifts content up */
-}
-
-.hero-text-1 {
-    font-family: "GT Alpina Trial";
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-top: -50px; /* Adjust this rather than using transform */
+  }
+  
+  .hero-text-1 {
+    font-family: var(--font-primary);
     font-weight: 300;
-    font-size: 25px;
+    font-size: 20px;
     line-height: 1.2;
-    letter-spacing: -2%;
-    text-align: center;
-    margin-bottom: 8px;
-    color: #000000
-}
-
-.hero-text-2 {
-    font-family: "Alte Haas Grotesk";
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+  }
+  
+  .hero-text-2 {
+    font-family: var(--font-secondary);
     font-weight: 400;
-    font-size: 25px;
-    line-height: 90%;
-    letter-spacing: -2%;
-    text-align: center;
+    font-size: clamp(18px, 4vw, 31px);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
     text-transform: uppercase;
-    color: #000000;
-    margin-bottom: 400px;
-}
-
-.hero-image {
-    max-width: 93%;
+    color: var(--color-text);
+    margin-bottom: clamp(15vh, 30vh, 40vh);
+  }
+  
+  .hero-image {
+    max-width: min(93%, 1100px);
     height: auto;
     position: absolute;
     left: 50%;
     bottom: 70px;
     transform: translateX(-50%);
     z-index: 1;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Main content */
-.main-content {
-    max-width: 1280px;
+  }
+  
+  /* Main content */
+  .main-content {
+    max-width: var(--container-max);
     margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Intro section */
-.intro-section {
+    padding: 0 var(--spacing-md);
+  }
+  
+  /* Grid layouts */
+  .intro-section,
+  .services-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-.intro-item {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 540px), 1fr));
+    gap: var(--spacing-lg);
+  }
+  
+  .services-section {
+    padding: var(--spacing-lg) 0 60px;
+  }
+  
+  /* Common item styles */
+  .intro-item,
+  .service-item {
     margin-bottom: 30px;
-}
-
-.item-header {
+  }
+  
+  .item-header,
+  .service-header {
     display: flex;
     align-items: baseline;
     margin-bottom: 15px;
-}
-
-.item-number {
-    font-family: "Alte Haas Grotesk", sans-serif;
+  }
+  
+  .item-number,
+  .service-number {
+    font-family: var(--font-secondary);
     font-size: 14px;
     font-weight: 500;
-    margin-right: 10px;
-}
-
-.item-title {
-    font-family: "GT Alpina Trial";
-    font-style: italic;
+    margin-right: var(--spacing-sm);
+  }
+  
+  .item-title,
+  .service-title {
+    font-family: var(--font-primary);
     font-size: 16px;
     font-weight: 500;
-}
-
-.item-text {
-    font-family: "GT Alpina Trial";
-    font-size: 16px;
+  }
+  
+  .item-title {
+    font-style: italic;
+  }
+  
+  .item-text,
+  .service-text {
+    font-family: var(--font-primary);
     line-height: 1.5;
-}
-
-/* Services section */
-.services-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    padding: 40px 0 60px;
-}
-
-.services-image {
+  }
+  
+  .item-text {
+    font-size: 16px;
+  }
+  
+  .service-text {
+    font-size: 14px;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .service-subtitle {
+    font-family: var(--font-primary);
+    font-style: italic;
+    font-size: 14px;
+  }
+  
+  /* Services specific */
+  .services-image {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.services-image img {
+  }
+  
+  .services-image img {
     max-width: 100%;
     height: auto;
     display: block;
-}
-
-.services-list {
+  }
+  
+  .services-list {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.service-item {
-    margin-bottom: 30px;
-}
-
-.service-header {
-    display: flex;
-    align-items: baseline;
-    margin-bottom: 10px;
-}
-
-.service-number {
-    font-family: "Alte Haas Grotesk", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    margin-right: 10px;
-}
-
-.service-title {
-    font-family: "GT Alpina Trial";
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.service-text {
-    font-family: "GT Alpina Trial";
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 10px;
-}
-
-.service-subtitle {
-    font-family: "GT Alpina Trial";
-    font-style: italic;
-    font-size: 14px;
-}
-
-/* Disclaimer section */
-.disclaimer-section {
-    padding: 40px 0;
-    border-top: 1px solid #ddd;
-}
-
-.disclaimer-header {
-    margin-bottom: 20px;
-}
-
-.disclaimer-label {
-    font-family: "Alte Haas Grotesk", sans-serif;
+  }
+  
+  /* Disclaimer section */
+  .disclaimer-section {
+    padding: var(--spacing-lg) 0;
+    border-top: 1px solid var(--color-border);
+  }
+  
+  .disclaimer-header {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .disclaimer-label {
+    font-family: var(--font-secondary);
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 1px;
-}
-
-.disclaimer-content {
-    font-family: "GT Alpina Trial";
+  }
+  
+  .disclaimer-content {
+    font-family: var(--font-primary);
     font-size: 14px;
     line-height: 1.5;
-}
-
-.disclaimer-content p {
+  }
+  
+  .disclaimer-content p {
     margin-bottom: 15px;
-}
-
-.disclaimer-links {
+  }
+  
+  .disclaimer-links {
     margin-bottom: 15px;
-}
-
-.disclaimer-links a {
-    font-family: "GT Alpina Trial";
+  }
+  
+  .disclaimer-links a {
+    font-family: var(--font-primary);
     font-style: italic;
     font-size: 14px;
-    color: #000;
+    color: var(--color-text);
     text-decoration: none;
     margin-right: 15px;
-}
-
-.disclaimer-links a:hover {
+  }
+  
+  .disclaimer-links a:hover {
     text-decoration: underline;
-}
-
-/* Footer */
-.site-footer {
-    padding: 40px 20px;
-    border-top: 1px solid #ddd;
+  }
+  
+  /* Footer */
+  .site-footer {
+    padding: var(--spacing-lg) var(--spacing-md);
+    border-top: 1px solid var(--color-border);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    max-width: 1280px;
+    max-width: var(--container-max);
     margin: 0 auto;
-}
-
-.footer-logo img {
+    gap: var(--spacing-lg);
+  }
+  
+  .footer-logo img {
     max-height: 80px;
     width: auto;
-}
-
-.footer-content {
+  }
+  
+  .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     flex-grow: 1;
-    padding-left: 40px;
-}
-
-.footer-text {
-    font-family: "GT Alpina Trial";
+  }
+  
+  .footer-text {
+    font-family: var(--font-primary);
     font-size: 14px;
     max-width: 300px;
-}
-
-.footer-contact {
+  }
+  
+  .footer-contact {
     text-align: right;
-}
-
-.contact-item {
+  }
+  
+  .contact-item {
     margin-bottom: 5px;
-}
-
-.contact-label {
-    font-family: "Alte Haas Grotesk", sans-serif;
+  }
+  
+  .contact-label {
+    font-family: var(--font-secondary);
     font-weight: 700;
     font-size: 12px;
-    margin-right: 10px;  /* Set distance from right margin */
+    margin-right: var(--spacing-sm);
     text-align: left;
-}
-
-.contact-value {
-    font-family: "GT Alpina Trial";
+  }
+  
+  .contact-value {
+    font-family: var(--font-primary);
     font-size: 14px;
-}
-
-/* Hero animations */
-.hero-text-1, .hero-text-2 {
-    transition: font-size 0.3s ease, margin-top 0.3s ease, margin-bottom 0.3s ease;
-}
-
-/* Responsive adjustments */
-@media (max-width: 480px) {
-    .hero-text-1 {
-        font-size: 20px;
-        margin-top: 22vh;
-    }
-    
-    .hero-text-2 {
-        font-size: 18px;
-        margin-bottom: 15vh;
-    }
-
-    .hero-image {
-        bottom: 30px;
-        max-width: 85%;
-    }
-    
-    .intro-section,
-    .services-section {
-        grid-template-columns: 1fr;
-    }
-    
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
     .site-footer {
-        flex-direction: column;
-        align-items: flex-start;
+      flex-direction: column;
     }
     
     .footer-content {
-        flex-direction: column;
-        align-items: flex-start;
-        padding-left: 0;
-        margin-top: 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 0;
+      margin-top: var(--spacing-md);
+      width: 100%;
     }
     
     .footer-contact {
-        text-align: left;
-        margin-top: 20px;
-    }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-    .hero-text-1 {
-        font-size: 24px;
-        margin-top: 20vh;
+      text-align: left;
+      margin-top: var(--spacing-md);
     }
     
-    .hero-text-2 {
-        font-size: 22px;
-        margin-bottom: 20vh;
-    }
-
     .hero-image {
-        bottom: 40px;
-        max-width: 88%;
+      bottom: 40px;
+      max-width: 88%;
     }
-    
-    .intro-section,
-    .services-section {
-        grid-template-columns: 1fr;
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: var(--spacing-md);
     }
-}
-
-@media (min-width: 769px) and (max-width: 1023px) {
-    .hero-text-1 {
-        font-size: 28px;
-    }
-    
-    .hero-text-2 {
-        font-size: 26px;
-        margin-bottom: 15vh;
-    }
-
+  
     .hero-image {
-        bottom: 50px;
-        max-width: 90%;
+      bottom: 30px;
+      max-width: 85%;
     }
-}
-
-@media (min-width: 1024px) and (max-width: 1279px) {
-    .hero-text-1 {
-        font-size: 30px;
-    }
-    
-    .hero-text-2 {
-        font-size: 28px;
-        margin-bottom: 20vh;
-    }
-
-    .hero-image {
-        bottom: 60px;
-        max-width: 91%;
-    }
-}
-
-@media (min-width: 1280px) {
-    .hero-text-1 {
-        font-size: 31px;
-    }
-    
-    .hero-text-2 {
-        font-size: 31px;
-        margin-bottom: 30vh;
-    }
-
-    .hero-image {
-        bottom: 70px;
-        max-width: 93%;
-    }
-}
-
-@media (min-width: 1440px) and (max-width:1599px) {
-    .hero-text-1 {
-        font-size: 31px;
-    }
-    
-    .hero-text-2 {
-        font-size: 31px;
-        margin-bottom: 35vh;
-    }
-}
-
-@media (min-width: 1600px) {
-    .hero-text-1 {
-        font-size: 31px;
-    }
-    
-    .hero-text-2 {
-        font-size: 31px;
-        margin-bottom: 40vh;
-    }
-}
+  }
+  
