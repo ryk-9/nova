@@ -151,14 +151,14 @@
 	/* Banner component */
 	.banner {
 		max-width: var(--container-max);
-		margin: 20px auto;
+		margin: 40px auto;
 		background-color: var(--color-bg);
 	}
 	
 	.feature-row {
 		display: grid;
 		grid-template-columns: auto 1fr;
-		padding: 20px;
+		padding: 40px;
 		border-bottom: 1px solid var(--color-light-border);
 		gap: var(--spacing-md);
 	}
