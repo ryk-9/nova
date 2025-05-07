@@ -123,14 +123,17 @@
   }
   
   /* Grid layouts */
-  .intro-section,
+  .intro-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+  
   .services-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 540px), 1fr));
     gap: var(--spacing-lg);
-  }
-  
-  .services-section {
     padding: var(--spacing-lg) 0 60px;
   }
   
@@ -336,4 +339,3 @@
       max-width: 85%;
     }
   }
-  
