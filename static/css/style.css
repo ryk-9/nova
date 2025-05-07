@@ -11,89 +11,47 @@ body {
     background: #f3f3f3;
     color: #000000;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 32px;
+    background: #f3f3f3;
 }
 
 html {
     scroll-behavior: smooth;
-  }  
+}  
 
-/** Navbar 
+/* Navbar */
 .navbar {
     display: flex;
-    justify-content: space-between; This creates the left-right separation
+    justify-content: center;
     align-items: center;
-    padding: 0 15px;
     height: 50px;
-    background-color: #f3f3f3; 
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-sizing: border-box; Ensures padding doesn't add to width
+    background-color: #f3f3f3;
 }
 
-
-.nav-left {
-    margin-left: 0;
+.logo {
+    height: 30px;
+    display: flex;           /* Align child (img) inside */
+    align-items: center;
+    position: fixed;
 }
 
-.nav-right {
-    margin-right: 0;
+.logo img {
+    height: 80%;
+    width: auto;
+    display: fixed;
 }
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links a {
-    font-family: "Alte Haas Grotesk", sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 100%;
-    letter-spacing: 2%;
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #000000;
-}
-
-
-.button {
-    background: transparent;
-    border: none;
-    font-family: "Alte Haas Grotesk", sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 100%;
-    letter-spacing: 2%;
-    text-align: center;
-    text-transform: uppercase;
-    color: #000000;
-    cursor: pointer;
-    padding: 10px 15px;
-    text-decoration: none;
-}
-
-.button:hover {
-    text-decoration: underline;
-}
-
- Make the nav links match the button style
-.nav-links a:hover {
-    text-decoration: underline;
-}
-*/
-
 
 /* Hero */
 .hero {
@@ -102,7 +60,7 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #453917;
+    background: #496588;
     position: relative;
     margin-bottom: 20px; /* Additional space at bottom */
 }
@@ -116,7 +74,7 @@ html {
 .hero-text-1 {
     font-family: "GT Alpina Trial";
     font-weight: 300;
-    font-size: 31px;
+    font-size: 25px;
     line-height: 1.2;
     letter-spacing: -2%;
     text-align: center;
@@ -127,7 +85,7 @@ html {
 .hero-text-2 {
     font-family: "Alte Haas Grotesk";
     font-weight: 400;
-    font-size: 31px;
+    font-size: 25px;
     line-height: 90%;
     letter-spacing: -2%;
     text-align: center;
@@ -484,4 +442,3 @@ html {
         margin-bottom: 40vh;
     }
 }
-
