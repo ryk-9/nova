@@ -2,6 +2,37 @@
  * Mobile-first responsive design with Desktop expansion support
  */
 
+/* Font imports */
+@font-face {
+  font-family: 'GT Alpina';
+  src: url('../fonts/gt_alpina/GT-Alpina-Standard-Light.woff2') format('woff2'),
+       url('../fonts/gt_alpina/GT-Alpina-Standard-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT Alpina';
+  src: url('../fonts/gt_alpina/GT-Alpina-Standard-Light-Italic.woff2') format('woff2'),
+       url('../fonts/gt_alpina/GT-Alpina-Standard-Light-Italic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Alte Haas Grotesk';
+  src: url('../fonts/alte_haas_grotesk/AlteHaasGroteskRegular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Alte Haas Grotesk';
+  src: url('../fonts/alte_haas_grotesk/AlteHaasGroteskBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 :root {
   /* Colors */
   --color-background: #f3f3f3;
@@ -9,9 +40,9 @@
   --color-text: #000000;
   
   /* Typography */
-  --font-primary: "GT Alpina-Light", Helvetica, Arial, sans-serif;
-  --font-secondary: "Alte Haas Grotesk-Regular", Helvetica, Arial, sans-serif;
-  --font-italic: "GT Alpina Trial-LightItalic", Helvetica, Arial, sans-serif;
+  --font-primary: "GT Alpina", Georgia, serif;
+  --font-secondary: "Alte Haas Grotesk", sans-serif;
+  --font-italic: "GT Alpina", Georgia, serif;
   
   /* Font sizes */
   --font-size-small: 13px;
@@ -19,13 +50,14 @@
   --font-size-regular: 20px;
   --font-size-large: 21px;
   --font-size-xlarge: 24px;
-  --font-size-hero: 25px;
+  --font-size-hero: 26px;
   
   /* Spacing */
   --spacing-xs: 5px;
   --spacing-sm: 10px;
   --spacing-md: 20px;
-  --spacing-lg: 40px;
+  --spacing-lg: 35px;
+  --spacing-xl: 60px;
   
   /* Layout */
   --container-width: 100%;
@@ -104,43 +136,57 @@ a {
 
 /* Hero section */
 .hero {
-    width: 100%;
-    margin-top: var(--header-height);
-    background-color: var(--color-primary);
-    min-height: calc(100vh - var(--header-height));
-    display: flex;
-    align-items: center;
-    position: relative;
+  width: 100%;
+  margin-top: var(--header-height);
+  background-color: var(--color-primary);
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    padding: var(--spacing-lg) var(--content-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: var(--spacing-xl) var(--content-padding);
 }
 
 .hero-title {
-    font-family: var(--font-italic);
-    font-weight: 300;
-    font-size: var(--font-size-hero);
-    text-align: center;
-    letter-spacing: -0.25px;
-    line-height: 12px;
-    margin-bottom: var(--spacing-sm);
-    font-style: italic;
-    letter-spacing: -0.06px;
+  font-family: var(--font-primary);
+  font-weight: 300;
+  font-size: var(--font-size-hero);
+  text-align: center;
+  letter-spacing: -0.25px;
+  line-height: 12px;
+  margin-bottom: var(--spacing-xs);
+  letter-spacing: -0.06px;
 }
 
-.hero-subtitle {
-    font-family: var(--font-secondary);
-    font-weight: 400;
-    font-size: var(--font-size-hero);
-    text-align: center;
-    letter-spacing: -0.25px;
-    margin-bottom: var(--spacing-lg);
+h1.hero-title i {
+  font-style: italic;
+}
+
+.hero-subtitle-1 {
+  font-size: var(--font-size-hero);
+  text-align: center;
+  letter-spacing: -0.25px;
+  font-family: "Alte Haas Grotesk";
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: -8px;
+}
+
+.hero-subtitle-2 {
+  font-size: var(--font-size-hero);
+  text-align: center;
+  letter-spacing: -0.25px;
+  font-family: "Alte Haas Grotesk";
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-lg);
 }
 
 .hero-image {
@@ -163,13 +209,19 @@ a {
   padding: 0 var(--content-padding);
 }
 
+#header {
+  margin: 0;
+  padding: 0 var(--content-padding);
+}
+
 /* Service sections */
 .services {
   padding: 0 var(--content-padding);
 }
 
 .service {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  padding: 0;
 }
 
 .service-title {
@@ -178,8 +230,13 @@ a {
   font-style: italic;
   font-size: var(--font-size-large);
   letter-spacing: 0;
-  line-height: 24px;
+  line-height: 28px;
   margin-bottom: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+}
+
+.service-title br {
+  margin-bottom: var(--spacing-md);
 }
 
 .service-description {
@@ -223,21 +280,9 @@ a {
   gap: var(--spacing-xs);
 }
 
-.carousel-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-}
-
-.carousel-dot.active {
-  background-color: white;
-}
-
 /* Securities section */
 .securities {
-  padding: 0 var(--content-padding);
+  padding: 0 var(--content-padding) 0 60px;
   margin-top: var(--spacing-lg);
 }
 
@@ -267,8 +312,11 @@ a {
 
 /* Footer */
 .footer {
-  padding: var(--spacing-lg) var(--content-padding);
+  padding: var(--spacing-lg) var(--content-padding) 0;
   margin-top: var(--spacing-lg);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
 }
 
 .footer-description {
@@ -277,7 +325,6 @@ a {
   font-size: var(--font-size-small);
   letter-spacing: 0;
   line-height: 17px;
-  margin-bottom: var(--spacing-sm);
 }
 
 .contact-info {
@@ -286,17 +333,18 @@ a {
   font-size: var(--font-size-small);
   letter-spacing: 0;
   line-height: 17px;
-  margin-bottom: var(--spacing-md);
+  justify-self: end;
 }
 
 .label {
-  font-weight: bold;
   margin-right: 5px;
 }
 
 .footer-image {
   max-width: 100%;
   height: auto;
+  margin-top: var(--spacing-lg);
+  grid-column: 1 / -1;
 }
 
 /* Media queries for desktop */
