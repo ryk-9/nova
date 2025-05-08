@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let currentIndex = 0;
     let slideInterval;
-    const intervalDuration = 6000; // 6 seconds per slide
+    const intervalDuration = 3500; // 3.5 seconds per slide
     
     // Create navigation dots if they don't exist
     if (!dotsContainer.children.length) {
