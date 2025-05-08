@@ -171,7 +171,7 @@ h1.hero-title i {
   font-family: "Alte Haas Grotesk";
   font-weight: 400;
   text-transform: uppercase;
-  margin-bottom: -8px;
+  margin-bottom: -12px;
 }
 
 .hero-subtitle-2 {
@@ -212,10 +212,11 @@ h1.hero-title i {
 /* Service sections */
 .services {
   padding: 0 var(--content-padding);
+	margin-left: var(--spacing-xs);
 }
 
 .service {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
   padding: 0;
 }
 
@@ -343,3 +344,294 @@ h1.hero-title i {
   margin-bottom: var(--spacing-sm);
 }
 
+/* Desktop Media Queries - Cleaned and Optimized */
+@media (min-width: 1024px) {
+  /* Reset and base styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+    overflow-x: hidden;
+  }
+  
+  /* Main container */
+  .mobile {
+    margin: 0 auto;
+    overflow: visible;
+  }
+  
+  /* Header styling */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--color-background);
+    z-index: 1000;
+    padding: 0 30px;
+  }
+  
+  .logo {
+    width: 68px;
+    height: 30px;
+  }
+  
+  /* Hero section - full screen */
+  .hero {
+    width: 100%;
+    height: 100vh;
+    margin-top: 0;
+    background-color: #446485;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-content {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30vw; /* Moves text higher as screen gets wider */
+  }
+  
+  .hero-title {
+    font-size: clamp(24px, 2.5vw, 40px);
+    line-height: 1.2;
+    letter-spacing: -0.25px;
+    font-weight: 300;
+  }
+  
+  .hero-subtitle-1, .hero-subtitle-2 {
+    font-size: clamp(24px, 2.5vw, 40px);
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin: 0;
+    display: inline-block;
+  }
+  
+  .hero-subtitle-1 {
+    margin-right: 10px;
+  }
+  
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .subtitle-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .hero-image {
+    position: absolute;
+    width: 95%;
+    height: auto;
+    bottom: clamp(20px, 5vh, 80px);
+  }
+  
+  /* Main content layout */
+  .main-content {
+    position: relative;
+  }
+  
+  /* Services section */
+	.services {
+    width: 100%;
+    margin-left: var(--spacing-md);
+  }
+
+	.service {
+    display: grid;
+    grid-template-columns: 12vw 1fr;
+    margin-bottom: 35px;
+  }
+
+	.service-title {
+		font-size: 1.35vw;
+		font-style: italic;
+		margin-bottom: 15px;
+		line-height: 1.4;
+		font-weight: normal;
+	}
+
+	.service-description {
+		font-size: 1.5vw;
+		line-height: 1.5;
+		color: var(--color-text);
+		font-family: var(--font-primary);
+		margin: var(--spacing-lg);
+	}
+
+	/* Section titles */
+	.section-title {
+		text-transform: uppercase;
+		font-size: 0.85rem;
+		letter-spacing: 1px;
+		margin: 60px 0 20px;
+		font-weight: bold;
+	}
+
+	  /* Core layout */
+  .main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+  }
+  
+  /* SERVICES section structure */
+  #offerings-container {
+    display: grid;
+    grid-template-columns: 48% 52%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Left column - image */
+  .offerings-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Right column - content container */
+  .offerings-content {
+    padding: 40px 0 0 0;
+  }
+  
+  /* Section header */
+  .section-title {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-regular);
+    font-weight: 400;
+    margin: 0 0 40px 0;
+    padding-left: 40px;
+  }
+  
+  /* Services grid */
+  .offerings {
+    padding: 0 20px 0 40px;
+    margin: 0;
+  }
+  
+  /* Service item layout */
+  .offering {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+  }
+  
+  /* Service title */
+  .offering-title {
+    font-family: var(--font-italic);
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.4;
+    margin: 0;
+  }
+  
+  /* Service description */
+  .offering-description {
+    font-family: var(--font-primary);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+
+	/* Carousel */
+	.carousel-container {
+		margin: var(--spacing-lg);
+		overflow: hidden;
+		position: relative;
+		width: 36vw;
+		height: 50vw;
+	}
+
+	.carousel-slides {
+		display: flex;
+	}
+
+	.carousel-slide {
+		min-width: 100%;
+		height: auto;
+	}
+
+	.carousel-controls {
+		display: flex;
+		justify-content: center;
+		margin-top: 15px;
+	}
+
+	/* Securities section */
+	.securities {
+		margin: 40px 0;
+		font-size: 0.75rem;
+		line-height: 1.5;
+	}
+
+	.disclaimer {
+		margin-bottom: 15px;
+	}
+
+	.securities-links {
+		display: flex;
+		gap: 20px;
+		margin: 15px 0;
+	}
+
+	.link {
+		color: #000;
+		text-decoration: underline;
+		font-style: italic;
+	}
+
+	/* Footer */
+	.footer {
+		margin-top: 60px;
+		display: grid;
+		grid-template-columns: 2fr 1fr 1fr;
+		gap: 20px;
+		align-items: center;
+	}
+
+	.footer-description {
+		font-size: 0.85rem;
+	}
+
+	.contact-info {
+		font-size: 0.75rem;
+	}
+
+	.contact-info p {
+		margin-bottom: 5px;
+	}
+
+	.label {
+		font-weight: bold;
+	}
+
+	.footer-image {
+		max-width: 120px;
+		justify-self: end;
+	}
+
+	/* Special styling for the Nova logo */
+	.footer-image {
+		display: block;
+	}
+}
