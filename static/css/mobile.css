@@ -197,27 +197,24 @@ h1.hero-title i {
 .section-title {
   font-family: var(--font-secondary);
   font-weight: 400;
-  font-size: var(--font-size-regular);
   letter-spacing: -0.20px;
   line-height: 36px;
   margin: var(--spacing-lg) 0 var(--spacing-md);
-  padding: 0 var(--content-padding);
 }
 
 #header {
-  margin: 0;
-  padding: 0 var(--content-padding);
+  margin: var(--spacing-sm);
 }
 
 /* Service sections */
 .services {
-  padding: 0 var(--content-padding);
 	margin-left: var(--spacing-xs);
 }
 
 .service {
   margin-bottom: var(--spacing-lg);
   padding: 0;
+	margin-left: var(--spacing-sm)
 }
 
 .service-title {
@@ -344,7 +341,6 @@ h1.hero-title i {
   margin-bottom: var(--spacing-sm);
 }
 
-/* Desktop Media Queries - Cleaned and Optimized */
 @media (min-width: 1024px) {
   /* Reset and base styles */
   * {
@@ -443,115 +439,105 @@ h1.hero-title i {
   /* Main content layout */
   .main-content {
     position: relative;
+    background-color: #f3f3f3;
   }
   
   /* Services section */
-	.services {
-    width: 100%;
-    margin-left: var(--spacing-md);
+  .services {
+    margin-left: var(--spacing-sm);
   }
 
-	.service {
+  .service {
     display: grid;
     grid-template-columns: 12vw 1fr;
     margin-bottom: 35px;
   }
 
-	.service-title {
-		font-size: 1.35vw;
-		font-style: italic;
-		margin-bottom: 15px;
-		line-height: 1.4;
-		font-weight: normal;
-	}
+  .service-title {
+    font-size: 1.35vw;
+    font-style: italic;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    font-weight: normal;
+  }
 
-	.service-description {
-		font-size: 1.5vw;
-		line-height: 1.5;
-		color: var(--color-text);
-		font-family: var(--font-primary);
-		margin: var(--spacing-lg);
-	}
+  .service-description {
+    font-size: 1.55vw;
+    line-height: 1.5;
+    color: var(--color-text);
+    font-family: var(--font-primary);
+    margin: var(--spacing-lg);
+  }
 
-	/* Section titles */
-	.section-title {
-		text-transform: uppercase;
-		font-size: 0.85rem;
-		letter-spacing: 1px;
-		margin: 60px 0 20px;
-		font-weight: bold;
-	}
-
-	  /* Core layout */
-  .main-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #fff;
-  }
-  
-  /* SERVICES section structure */
-  #offerings-container {
-    display: grid;
-    grid-template-columns: 48% 52%;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Left column - image */
-  .offerings-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  /* Right column - content container */
-  .offerings-content {
-    padding: 40px 0 0 0;
-  }
-  
-  /* Section header */
+  /* Section titles */
   .section-title {
     font-family: var(--font-secondary);
     font-size: var(--font-size-regular);
     font-weight: 400;
-    margin: 0 0 40px 0;
-    padding-left: 40px;
   }
-  
-  /* Services grid */
-  .offerings {
-    padding: 0 20px 0 40px;
-    margin: 0;
-  }
-  
-  /* Service item layout */
-  .offering {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 20px;
-    margin-bottom: 40px;
-    align-items: flex-start;
-  }
-  
-  /* Service title */
-  .offering-title {
-    font-family: var(--font-italic);
-    font-size: 16px;
-    font-weight: 300;
-    font-style: italic;
-    line-height: 1.4;
-    margin: 0;
-  }
-  
-  /* Service description */
-  .offering-description {
-    font-family: var(--font-primary);
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 1.5;
-    margin: 0;
-    padding: 0;
-  }
+
+	/* Main container */
+	.carousel-services-container {
+		display: grid;
+		grid-template-areas: 
+			"carousel title"
+			"carousel services";
+		margin: var(--spacing-xl) 0;
+		grid-template-rows: auto 1fr;
+		grid-template-columns: 48% 52%;
+	}
+	
+	#header {
+		font-size: 1.35vw;
+		line-height: 1.4;
+		font-weight: normal;
+		max-height: fit-content;
+		grid-area: title; /* Explicitly assign to grid area */
+		align-self: start; /* Align to the top of its grid cell */
+    margin-left: var(--spacing-md);
+	}
+
+	/* Carousel positioning */
+	#carousel-container {
+		grid-area: carousel;
+		height: 100%;
+		overflow: hidden;
+		margin: 0 var(--spacing-md);
+	}
+	
+	.carousel-slides {
+		height: 100%;
+		display: flex;
+	}
+	
+	.carousel-slide {
+		min-width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	
+	.carousel-controls {
+		position: absolute;
+		bottom: 20px;
+		left: 20px;
+		z-index: 10;
+	}
+	
+	/* Services section */
+	.section-title {
+		grid-area: title;
+		font-size: var(--font-size-regular);
+		font-family: var(--font-secondary);
+	}
+	
+	.services-grid {
+		grid-area: services;
+		display: flex;
+		flex-direction: column;
+		padding: var(--spacing-sm);
+		padding-top: 0; /* Remove top padding to prevent pushing content down */
+		margin-top: var(--spacing-sm); /* Add margin to create space from header */
+	}
 
 	/* Carousel */
 	.carousel-container {
@@ -577,61 +563,96 @@ h1.hero-title i {
 		margin-top: 15px;
 	}
 
-	/* Securities section */
-	.securities {
-		margin: 40px 0;
-		font-size: 0.75rem;
-		line-height: 1.5;
-	}
+  /* Securities section */
+.securities {
+  display: grid;
+  grid-template-areas: "title content";
+  grid-template-columns: 12vw 1fr;
+  align-items: start;
+  margin: 50px 0 80px 0;
+  padding: 0 20px 0 40px;
+}
 
-	.disclaimer {
-		margin-bottom: 15px;
-	}
+.section-title {
+  grid-area: title;
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: -0.2px;
+  margin: 0;
+  padding-top: 0;
+}
 
-	.securities-links {
-		display: flex;
-		gap: 20px;
-		margin: 15px 0;
-	}
+.securities-content {
+  grid-area: content;
+  margin-left: var(--spacing-lg);
+  max-width: 75%;
+}
 
-	.link {
-		color: #000;
-		text-decoration: underline;
-		font-style: italic;
-	}
+.disclaimer {
+  font-family: var(--font-primary);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  max-width: 100%;
+}
 
-	/* Footer */
-	.footer {
-		margin-top: 60px;
-		display: grid;
-		grid-template-columns: 2fr 1fr 1fr;
-		gap: 20px;
-		align-items: center;
-	}
+.securities-links {
+  display: flex;
+  gap: 20px;
+  margin: 15px 0;
+}
 
-	.footer-description {
-		font-size: 0.85rem;
-	}
+.link {
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--color-text);
+  text-decoration: underline;
+}
 
-	.contact-info {
-		font-size: 0.75rem;
-	}
+/* Footer */
+.footer {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 20px;
+  align-items: start;
+  margin: 60px 0 40px 0;
+  padding: 0 40px;
+  position: relative;
+}
 
-	.contact-info p {
-		margin-bottom: 5px;
-	}
+.footer-description {
+  font-family: var(--font-primary);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+}
 
-	.label {
-		font-weight: bold;
-	}
+.contact-info {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: right;
+}
 
-	.footer-image {
-		max-width: 120px;
-		justify-self: end;
-	}
+.contact-info p {
+  margin: 0 0 5px 0;
+}
 
-	/* Special styling for the Nova logo */
-	.footer-image {
-		display: block;
-	}
+.label {
+  font-weight: 700;
+  display: inline-block;
+  width: 20px;
+}
+
+.footer-image {
+  position: absolute;
+  width: 300px;
+  bottom: -20px;
+}
 }

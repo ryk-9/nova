@@ -47,63 +47,63 @@
           </article>
         </section>
         
-        <!-- Image Carousel -->
-        <div id="offerings-container">
-          <div class="carousel-slides">
-            <img class="carousel-slide" src="../static/img/stairs.png" alt="Sunlit stairs" />
-            <img class="carousel-slide" src="../static/img/code.png" alt="Code on screen" />
-            <img class="carousel-slide" src="../static/img/rocks.png" alt="Balanced stones" />
-            <img class="carousel-slide" src="../static/img/city.png" alt="Chicago skyline" />
-            <img class="carousel-slide" src="../static/img/dominos.png" alt="Stacked dominos" />
-            <img class="carousel-slide" src="../static/img/building.png" alt="Windowed building" />
-            <img class="carousel-slide" src="../static/img/ink.png" alt="Ink blots" />
-          </div>
-          <div class="carousel-controls"></div>
-          <div class="offerings-content">
-            <h2 class="section-title">SERVICES</h2>
-            
-            <div class="offerings">
-              <article class="offering">
-                <h3 class="offering-title">◊<br>Capital Raising</h3>
-                <p class="offering-description">
-                  Whether you're looking to fund growth or provide liquidity for management teams and existing investors, we help you raise the right private capital at the right time. Our deep network of institutional investors and capital raising expertise ensures a seamless and strategic capital raise.
-                </p>
-              </article>
-              
-              <article class="offering">
-                <h3 class="offering-title">◊<br>M&amp;A</h3>
-                <p class="offering-description">
-                  From initial positioning through negotiation and close, we deliver experienced, outcome-driven advice tailored to each client.
-                </p>
-              </article>
-              
-              <article class="offering">
-                <h3 class="offering-title">◊<br>Investment</h3>
-                <p class="offering-description">
-                  We invest alongside our clients when we see exceptional alignment and potential. Our belief in your vision may include taking a direct equity stake — demonstrating our commitment to long-term success.
-                </p>
-              </article>
+        <!-- Combined Carousel and Services Section -->
+        <div class="carousel-services-container">
+          <!-- Image Carousel -->
+          <div id="carousel-container">
+            <div class="carousel-slides">
+              <img class="carousel-slide" src="../static/img/stairs.png" alt="Sunlit stairs" />
+              <img class="carousel-slide" src="../static/img/rocks.png" alt="Balanced stones" />
+              <img class="carousel-slide" src="../static/img/city.png" alt="Chicago skyline" />
+              <img class="carousel-slide" src="../static/img/dominos.png" alt="Stacked dominos" />
+              <img class="carousel-slide" src="../static/img/building.png" alt="Windowed building" />
+              <img class="carousel-slide" src="../static/img/ink.png" alt="Ink blots" />
             </div>
+            <div class="carousel-controls"></div>
+          </div>
+          
+          <h2 class="section-title" id="header">SERVICES</h2>
+          <div class="services-grid">
+            <article class="service" id="capital-raising">
+              <h3 class="service-title">◊<br>Capital Raising</h3>
+              <p class="service-description">
+          Whether you're looking to fund growth or provide liquidity for management teams and existing investors, we
+          help you raise the right private capital at the right time. Our deep network of institutional investors
+          and capital raising expertise ensures a seamless and strategic capital raise.
+              </p>
+            </article>
+            <article class="service">
+              <h3 class="service-title">◊<br>M&amp;A</h3>
+              <p class="service-description">
+          From initial positioning through negotiation and close, we deliver experienced, outcome-driven advice
+          tailored to each client.
+              </p>
+            </article>
+            <article class="service">
+              <h3 class="service-title">◊<br>Investment</h3>
+              <p class="service-description">
+          We put our capital where our conviction lies—becoming true partners when alignment emerges.
+              </p>
+            </article>
           </div>
         </div>
-        <h2 class="section-title">SECURITIES</h2>
         <section class="securities">
-          <p class="disclaimer">
-            Securities are offered through Finalis Securities LLC Member FINRA / SIPC. Nova Partners is not a registered broker-dealer, and Finalis Securities LLC and Nova Partners are separate, unaffiliated entities.
-          </p>
-          <nav class="securities-links">
-            <a href="#" class="link">Finalis Privacy Policy</a>
-            <a href="#" class="link">Finalis Business Continuity Plan</a>
-            <a href="#" class="link">FINRA BrokerCheck</a>
-          </nav>
-          <p class="disclaimer">
-            www.nova-partners.co (the "Nova Partners Website") is a website operated by Nova Partners, a privately held
-            California limited liability company. Nova Advisory Partners LLC provides capital raising services and
-            mergers and acquisitions services.
-          </p>
+          <h2 class="section-title">SECURITIES</h2>
+          <div class="securities-content">
+            <p class="disclaimer">
+              Securities are offered through Finalis Securities LLC Member FINRA / SIPC. Nova Partners is not a registered broker-dealer, and Finalis Securities LLC and Nova Partners are separate, unaffiliated entities.
+            </p>
+            <nav class="securities-links">
+              <a href="#" class="link">Finalis Privacy Policy</a>
+              <a href="#" class="link">Finalis Business Continuity Plan</a>
+              <a href="#" class="link">FINRA BrokerCheck</a>
+            </nav>
+            <p class="disclaimer">
+              www.nova-partners.co (the "Nova Partners Website") is a website operated by Nova Partners, a privately held California limited liability company. Nova Advisory Partners LLC provides capital raising services and mergers and acquisitions services.
+            </p>
+          </div>
         </section>
         <footer class="footer">
-          <p class="footer-description">Capital raising and M&amp;A Advisory for Technology.</p>
           <div class="contact-info">
             <p><span class="label">T.</span> (415) 439-0619</p>
             <p><span class="label">M.</span> james@nova-partners.co</p>
@@ -111,9 +111,6 @@
           <img class="footer-image" src="../static/img/hero.svg" alt="Footer Logo"/>
         </footer>
       </main>
-    </div>
-    
-    <!-- Image Carousel and Responsive JavaScript -->
     <script src="../static/js/carousel.js"></script>
   </body>
 </html>
