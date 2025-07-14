@@ -426,6 +426,10 @@ h1.hero-title i {
     margin-right: 10px;
   }
   
+  .hero-subtitle-2 {
+    margin-right: 10px;
+  }
+  
   .hero-content {
     display: flex;
     flex-direction: column;
