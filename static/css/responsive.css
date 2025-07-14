@@ -51,7 +51,7 @@
   /* Spacing */
   --spacing-xs: 5px;
   --spacing-sm: 10px;
-  --spacing-md: 20px;
+  --spacing-md: 30px;
   --spacing-lg: 35px;
   --spacing-xl: 60px;
   
@@ -243,7 +243,7 @@ h1.hero-title i {
 /* Image carousel */
 .carousel-container {
   position: relative;
-  margin: var(--spacing-sm);
+  margin: 20px;
   overflow: hidden;
   width: auto;
   height: 600px; /* Standardized height */
@@ -444,13 +444,13 @@ h1.hero-title i {
   
   /* Services section */
   .services {
-    margin-left: var(--spacing-sm);
+    margin-left: var(--spacing-md);
   }
 
   .service {
     display: grid;
-    grid-template-columns: 12vw 1fr;
-    margin-bottom: 35px;
+    grid-template-columns: 18vw 1fr;
+    margin-bottom: 0px;
   }
 
   .service-title {
@@ -484,7 +484,7 @@ h1.hero-title i {
 			"carousel services";
 		margin: var(--spacing-xl) 0;
 		grid-template-rows: auto 1fr;
-		grid-template-columns: 48% 52%;
+		grid-template-columns: 44% 56%;
 	}
 	
 	#header {
@@ -494,7 +494,7 @@ h1.hero-title i {
 		max-height: fit-content;
 		grid-area: title; /* Explicitly assign to grid area */
 		align-self: start; /* Align to the top of its grid cell */
-    margin-left: var(--spacing-md);
+    margin-left: 20px;
 	}
 
 	/* Carousel positioning */
@@ -567,9 +567,8 @@ h1.hero-title i {
 .securities {
   display: grid;
   grid-template-areas: "title content";
-  grid-template-columns: 12vw 1fr;
+  grid-template-columns: 18vw 1fr;
   align-items: start;
-  margin: 50px 0 80px 0;
   padding: 0 20px 0 40px;
 }
 
@@ -577,7 +576,7 @@ h1.hero-title i {
   grid-area: title;
   font-family: var(--font-secondary);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
   letter-spacing: -0.2px;
   margin: 0;
   padding-top: 0;
@@ -586,13 +585,13 @@ h1.hero-title i {
 .securities-content {
   grid-area: content;
   margin-left: var(--spacing-lg);
-  max-width: 75%;
+  max-width: 95%;
 }
 
 .disclaimer {
   font-family: var(--font-primary);
   font-weight: 300;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1.5;
   margin-bottom: 15px;
   max-width: 100%;
@@ -602,13 +601,14 @@ h1.hero-title i {
   display: flex;
   gap: 20px;
   margin: 15px 0;
+  flex-direction: row;
 }
 
 .link {
   font-family: var(--font-italic);
   font-style: italic;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 20px;
   color: var(--color-text);
   text-decoration: underline;
 }
@@ -627,7 +627,7 @@ h1.hero-title i {
 .footer-description {
   font-family: var(--font-primary);
   font-weight: 300;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.4;
   margin: 0;
 }
@@ -635,7 +635,7 @@ h1.hero-title i {
 .contact-info {
   font-family: var(--font-secondary);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.4;
   text-align: right;
 }
@@ -645,7 +645,7 @@ h1.hero-title i {
 }
 
 .label {
-  font-weight: 700;
+  font-weight: 400;
   display: inline-block;
   width: 20px;
 }
@@ -656,3 +656,4 @@ h1.hero-title i {
   bottom: -20px;
 }
 }
+
