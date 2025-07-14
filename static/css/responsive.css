@@ -181,6 +181,16 @@ h1.hero-title i {
   font-family: "Alte Haas Grotesk";
   font-weight: 400;
   text-transform: uppercase;
+  margin-bottom: -12px;
+}
+
+.hero-subtitle-3 {
+  font-size: var(--font-size-hero);
+  text-align: center;
+  letter-spacing: -0.25px;
+  font-family: "Alte Haas Grotesk";
+  font-weight: 400;
+  text-transform: uppercase;
   margin-bottom: var(--spacing-lg);
 }
 
@@ -404,7 +414,7 @@ h1.hero-title i {
     font-weight: 300;
   }
   
-  .hero-subtitle-1, .hero-subtitle-2 {
+  .hero-subtitle-1, .hero-subtitle-2, .hero-subtitle-3 {
     font-size: clamp(24px, 2.5vw, 40px);
     line-height: 1.2;
     text-transform: uppercase;
