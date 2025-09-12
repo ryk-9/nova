@@ -156,7 +156,7 @@ a {
   text-align: center;
   letter-spacing: -0.25px;
   line-height: 1.1;
-  margin-bottom: -12px;
+  margin-bottom: -8px;
   letter-spacing: -0.06px;
 }
 
@@ -442,7 +442,7 @@ h1.hero-title i {
     line-height: 1.2;
     letter-spacing: -0.25px;
     font-weight: 300;
-    margin-bottom: -12px;
+    margin-bottom: -8px;
   }
   
   .hero-subtitle-1, .hero-subtitle-2, .hero-subtitle-3 {
