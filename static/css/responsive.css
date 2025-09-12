@@ -361,12 +361,13 @@ h1.hero-title i {
 /* Mobile-specific layout adjustments */
 @media (max-width: 767px) {
   .hero-title {
-    margin-bottom: var(--spacing-xs);
+    margin-bottom: -12px;
   }
   
   .subtitle-container {
     flex-direction: column;
     gap: 0;
+    margin-top: 0;
   }
   
   .hero-subtitle-1, .hero-subtitle-2, .hero-subtitle-3 {
