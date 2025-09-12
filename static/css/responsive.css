@@ -171,7 +171,7 @@ h1.hero-title i {
   font-family: "Alte Haas Grotesk";
   font-weight: 400;
   text-transform: uppercase;
-  line-height: 1.2;
+  line-height: 1.4;
   margin: 0;
   padding: 0 20px;
   word-wrap: break-word;
@@ -410,7 +410,7 @@ h1.hero-title i {
   
   .hero-subtitle {
     font-size: clamp(28px, 2.8vw, 44px);
-    line-height: 1.2;
+    line-height: 1.4;
   }
   
   
