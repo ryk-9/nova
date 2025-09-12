@@ -152,11 +152,11 @@ a {
 .hero-title {
   font-family: var(--font-primary);
   font-weight: 300;
-  font-size: var(--font-size-hero);
+  font-size: clamp(22px, 5.5vw, 40px);
   text-align: center;
   letter-spacing: -0.25px;
-  line-height: 12px;
-  margin-bottom: var(--spacing-xs);
+  line-height: 1.2;
+  margin-bottom: clamp(var(--spacing-md), 4vw, var(--spacing-lg));
   letter-spacing: -0.06px;
 }
 
@@ -165,33 +165,36 @@ h1.hero-title i {
 }
 
 .hero-subtitle-1 {
-  font-size: var(--font-size-hero);
+  font-size: clamp(22px, 5.5vw, 40px);
   text-align: center;
   letter-spacing: -0.25px;
   font-family: "Alte Haas Grotesk";
   font-weight: 400;
   text-transform: uppercase;
-  margin-bottom: -12px;
+  margin-bottom: clamp(-8px, -1vw, 0px);
+  line-height: 1.2;
 }
 
 .hero-subtitle-2 {
-  font-size: var(--font-size-hero);
+  font-size: clamp(22px, 5.5vw, 40px);
   text-align: center;
   letter-spacing: -0.25px;
   font-family: "Alte Haas Grotesk";
   font-weight: 400;
   text-transform: uppercase;
-  margin-bottom: -12px;
+  margin-bottom: clamp(-8px, -1vw, 0px);
+  line-height: 1.2;
 }
 
 .hero-subtitle-3 {
-  font-size: var(--font-size-hero);
+  font-size: clamp(22px, 5.5vw, 40px);
   text-align: center;
   letter-spacing: -0.25px;
   font-family: "Alte Haas Grotesk";
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: var(--spacing-lg);
+  line-height: 1.2;
 }
 
 .hero-image {
@@ -351,6 +354,38 @@ h1.hero-title i {
   margin-bottom: var(--spacing-sm);
 }
 
+.subtitle-container {
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2px, 1vw, 8px);
+}
+
+/* Mobile-specific layout adjustments */
+@media (max-width: 767px) {
+  .subtitle-container {
+    flex-direction: column;
+  }
+  
+  .hero-subtitle-1, .hero-subtitle-2, .hero-subtitle-3 {
+    margin-bottom: 0;
+  }
+}
+
+/* Tablet and up - horizontal layout when space allows */
+@media (min-width: 768px) {
+  .subtitle-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(8px, 2vw, 16px);
+  }
+  
+  .hero-subtitle-1, .hero-subtitle-2, .hero-subtitle-3 {
+    white-space: nowrap;
+  }
+}
+
 @media (min-width: 1024px) {
   /* Reset and base styles */
   * {
@@ -408,32 +443,18 @@ h1.hero-title i {
   }
   
   .hero-title {
-    font-size: clamp(24px, 2.5vw, 40px);
+    font-size: clamp(28px, 2.8vw, 44px);
     line-height: 1.2;
     letter-spacing: -0.25px;
     font-weight: 300;
+    margin-bottom: clamp(20px, 3vw, 40px);
   }
   
   .hero-subtitle-1, .hero-subtitle-2, .hero-subtitle-3 {
-    font-size: clamp(24px, 2.5vw, 40px);
+    font-size: clamp(28px, 2.8vw, 44px);
     line-height: 1.2;
     text-transform: uppercase;
     margin: 0;
-    display: inline-block;
-  }
-  
-  .hero-subtitle-1 {
-    margin-right: 10px;
-  }
-  
-  .hero-subtitle-2 {
-    margin-right: 10px;
-  }
-  
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
   
   .subtitle-container {
@@ -441,6 +462,29 @@ h1.hero-title i {
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: var(--spacing-lg);
+    gap: clamp(8px, 1.5vw, 24px);
+    transition: all 0.3s ease;
+  }
+  
+  /* Smooth responsive subtitle layout */
+  @media (min-width: 1024px) and (max-width: 1299px) {
+    .subtitle-container {
+      flex-direction: column;
+      gap: clamp(2px, 0.5vw, 8px);
+      text-align: center;
+    }
+  }
+  
+  @media (min-width: 1300px) {
+    .subtitle-container {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .hero-subtitle-1, .hero-subtitle-2, .hero-subtitle-3 {
+      white-space: nowrap;
+    }
   }
   
   .hero-image {
