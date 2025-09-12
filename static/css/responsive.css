@@ -164,34 +164,18 @@ h1.hero-title i {
   font-style: italic;
 }
 
-.hero-subtitle-1 {
+.hero-subtitle {
   font-size: var(--font-size-hero);
   text-align: center;
   letter-spacing: -0.25px;
   font-family: "Alte Haas Grotesk";
   font-weight: 400;
   text-transform: uppercase;
-  margin-bottom: -12px;
-}
-
-.hero-subtitle-2 {
-  font-size: var(--font-size-hero);
-  text-align: center;
-  letter-spacing: -0.25px;
-  font-family: "Alte Haas Grotesk";
-  font-weight: 400;
-  text-transform: uppercase;
-  margin-bottom: -12px;
-}
-
-.hero-subtitle-3 {
-  font-size: var(--font-size-hero);
-  text-align: center;
-  letter-spacing: -0.25px;
-  font-family: "Alte Haas Grotesk";
-  font-weight: 400;
-  text-transform: uppercase;
-  margin-bottom: -12px;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0 20px;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .hero-image {
@@ -354,32 +338,11 @@ h1.hero-title i {
 .subtitle-container {
   margin-bottom: var(--spacing-lg);
   margin-top: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+  display: block;
+  width: 100%;
+  padding: 0;
 }
 
-/* Mobile-specific layout adjustments */
-@media (max-width: 767px) {
-  .subtitle-container {
-    flex-direction: column;
-    gap: 0;
-  }
-}
-
-/* Tablet and up - horizontal layout when space allows */
-@media (min-width: 768px) {
-  .subtitle-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: clamp(8px, 2vw, 16px);
-  }
-  
-  .hero-subtitle-1, .hero-subtitle-2, .hero-subtitle-3 {
-    white-space: nowrap;
-  }
-}
 
 @media (min-width: 1024px) {
   /* Reset and base styles */
@@ -445,41 +408,11 @@ h1.hero-title i {
     margin-bottom: -8px;
   }
   
-  .hero-subtitle-1, .hero-subtitle-2, .hero-subtitle-3 {
+  .hero-subtitle {
     font-size: clamp(28px, 2.8vw, 44px);
     line-height: 1.2;
   }
   
-  .subtitle-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: var(--spacing-lg);
-    margin-top: 0;
-    gap: clamp(8px, 1.5vw, 24px);
-    transition: all 0.3s ease;
-  }
-  
-  /* Smooth responsive subtitle layout */
-  @media (min-width: 1024px) and (max-width: 1299px) {
-    .subtitle-container {
-      flex-direction: column;
-      gap: clamp(2px, 0.5vw, 8px);
-      text-align: center;
-    }
-  }
-  
-  @media (min-width: 1300px) {
-    .subtitle-container {
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .hero-subtitle-1, .hero-subtitle-2, .hero-subtitle-3 {
-      white-space: nowrap;
-    }
-  }
   
   .hero-image {
     position: absolute;
