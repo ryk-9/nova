@@ -155,7 +155,7 @@ a {
   font-size: var(--font-size-hero);
   text-align: center;
   letter-spacing: -0.25px;
-  line-height: 1.1;
+  line-height: 1.4;
   margin-bottom: -8px;
   letter-spacing: -0.06px;
 }
@@ -402,7 +402,7 @@ h1.hero-title i {
   
   .hero-title {
     font-size: clamp(28px, 2.8vw, 44px);
-    line-height: 1.2;
+    line-height: 1.4;
     letter-spacing: -0.25px;
     font-weight: 300;
     margin-bottom: -8px;
