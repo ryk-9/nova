@@ -582,6 +582,54 @@ h1.hero-title i {
     margin-top: 15px;
   }
 
+  /* Contact section */
+  .contact {
+    display: grid;
+    grid-template-areas: "title content";
+    grid-template-columns: 18vw 1fr;
+    align-items: start;
+    padding: 0 20px 0 40px;
+    margin-top: var(--spacing-xl);
+  }
+
+  .contact .section-title {
+    grid-area: title;
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding-top: 0;
+  }
+
+  .contact-content {
+    grid-area: content;
+    margin-left: var(--spacing-lg);
+    max-width: 95%;
+  }
+
+  .contact-name {
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  .contact-email {
+    font-family: var(--font-primary);
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .contact .disclaimer {
+    font-size: 20px;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
   /* Securities section */
   .securities {
     display: grid;
