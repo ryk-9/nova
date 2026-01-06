@@ -632,6 +632,13 @@ h1.hero-title i {
     padding: 0;
   }
 
+  .contact-text {
+    grid-area: content;
+    margin-top: 0;
+    padding-top: 0;
+    max-width: 95%;
+  }
+
   .contact-email {
     font-family: var(--font-primary);
     font-weight: 300;
