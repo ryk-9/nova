@@ -278,11 +278,12 @@ h1.hero-title i {
 }
 
 .contact-name {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   font-weight: 400;
   font-size: var(--font-size-medium);
   letter-spacing: 0;
   line-height: 20px;
+  margin-top: var(--spacing-lg);
   margin-bottom: 0;
 }
 
@@ -295,10 +296,19 @@ h1.hero-title i {
   margin-bottom: var(--spacing-sm);
 }
 
+.email-link {
+  font-family: var(--font-italic);
+  font-weight: 300;
+  font-style: italic;
+  font-size: var(--font-size-medium);
+  text-decoration: underline;
+}
+
 /* Securities section */
 .securities {
   padding: 0 var(--content-padding) 0 60px;
   margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg)
 }
 
 .disclaimer {
